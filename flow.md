@@ -7,13 +7,19 @@
          npm i --save-dev @types/express@5.0.6 @types/node@22.10.10 @types/pg@8.11.10 drizzle-kit@0.30.4 tsx@4.19.2 typescript@5.7.3    
  
 - create folders for src 
-- setup env vars
+- setup env vars for sentry, neon, stream, clerk and imagekit
 - set up scripts in Backends/package.json for index.ts      
         ##     "dev": "tsx watch src/index.ts",
         ## works like nodemon since were using the watch command
 
 - setup git 
 - create database schema. using drizzle ORM for ease. 
-    define users and products table
+    define users, products, orders, orderItems and checkoutSessions table.
+    define relations for the users, products and orders tables. 
+    setup db pool and create the "drizzle.config.ts" file. 
+    add script in package.json for db:push to neon.
+
+
+
 
 
