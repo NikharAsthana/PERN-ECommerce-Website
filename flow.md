@@ -19,6 +19,33 @@
     setup db pool and create the "drizzle.config.ts" file. 
     add script in package.json for db:push to neon.
 
+- setup auth with clerk
+    install clerk dep for frontend : 
+        npm install @clerk/react
+    create env variables for the frontend
+    follow clerk docs to integrate clerk to the frontend:
+        https://clerk.com/docs/react/getting-started/quickstart
+- new sign ups with clerk wont automatically show up on neon db. Need to set up a webhook {automated msg thats sent when something happens ie: a user being created}  
+    clerk has events which include- user.created, user.updated and user.deleted       
+    using https://neobuy-test.com/webhooks/clerk as test url for endpoint url,  will change on deployment. (clerk will send a post request on the route "/webhooks/clerk")
+    [chose neobuy-test.com as app domain at whim may change later]
+    subscribe to needed events on clerk dashboard [ configure -> developers -> webhooks]
+    add env var for webhook in the backend
+    
+    tangent:
+    setup backend/src/index.ts with middlewares etc
+        fix cors using:  
+            npm i --save-dev @types/cors
+
+    Ensure validation for env variables:        
+    setup and use zod for env vars
+        create backend/src/lib/env.ts
+        write envSchema for zod, and setup loadEnv and getEnv functions.
+
+
+- setup logic for clerkWebhookHandler in backend/src/webhooks/clerk.ts
+        
+
 
 
 
