@@ -14,6 +14,7 @@ const rawJson = express.raw({type: "application/json", limit: "1mb"});
 
 // clerk sends event within the webhook through a post request on this route.
 // the handler needs the event as raw json, so using the express.json middleware before it will cause problems. Thus, keeping the webhooks route above/before the express.json middleware.
+// its necessary to not parse webhook event data, and it should be in the raw format
 app.post("/webhooks/clerk", rawJson, (req,res)=>{
     void clerkWebhookHandler(req,res); 
 })
