@@ -46,7 +46,7 @@
 - setup logic for clerkWebhookHandler in backend/src/webhooks/clerk.ts
         create a helper method to get role of user and to check roles in backend/src/lib/roles.ts
 
-
+- setup render for deployment. Configure .dockerignore and Dockerfile for deployment
 
 
 
