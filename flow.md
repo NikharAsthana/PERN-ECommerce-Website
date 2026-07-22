@@ -22,7 +22,7 @@
 - setup auth with clerk
     install clerk dep for frontend : 
         npm install @clerk/react
-    create env variables for the frontend
+    create env variables for the frontend (in the frontend folder)
     follow clerk docs to integrate clerk to the frontend:
         https://clerk.com/docs/react/getting-started/quickstart
 - new sign ups with clerk wont automatically show up on neon db. Need to set up a webhook {automated msg thats sent when something happens ie: a user being created}  
@@ -46,7 +46,11 @@
 - setup logic for clerkWebhookHandler in backend/src/webhooks/clerk.ts
         create a helper method to get role of user and to check roles in backend/src/lib/roles.ts
 
-- setup render for deployment. Configure .dockerignore and Dockerfile for deployment
+- setup render for deployment. Create and configure .dockerignore and Dockerfile for deployment.
+    add logic in Backend/src/index.ts to serve both the frontend and the backend.
+    add env vars to render
+
+
 
 
 
