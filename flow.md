@@ -50,7 +50,10 @@
     add logic in Backend/src/index.ts to serve both the frontend and the backend.
     add env vars to render
 
-
+- service is shut down after 15 min of inactrivity setting up cron jobs for it to stay active
+    install dep: cron@4.4.0 in the backend
+    create cron.ts in Backend/src/lib/
+    create /health endpoint in index.ts
 
 
 
