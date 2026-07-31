@@ -56,4 +56,16 @@
     create /health endpoint in index.ts
 
 
+- setup up routers for product, stream and me routes in index.ts
+    create meRouter.ts in and productRouter.ts in Backend/src/routes    
+    - create Backend/src/lib/users.ts (use frequently so it gets a seperate file).
+    create methods for productRouter in Backend/src/controllers/productController.ts
+    
+    -create stream router in Backend/src/routes/streamRouter.ts
+        create helper in Backend/src/lib/stream.ts
+        create methods for streamRouter.ts in Backend/src/controllers/streamController.ts
+
+
+
+
 
