@@ -22,7 +22,7 @@
 - setup auth with clerk
     install clerk dep for frontend : 
         npm install @clerk/react
-    create env variables for the frontend (in the frontend folder)
+    create env variables for the frontend (in the frontend folder) and create .env.example file
     follow clerk docs to integrate clerk to the frontend:
         https://clerk.com/docs/react/getting-started/quickstart
 - new sign ups with clerk wont automatically show up on neon db. Need to set up a webhook {automated msg thats sent when something happens ie: a user being created}  
@@ -65,6 +65,10 @@
         create helper in Backend/src/lib/stream.ts
         create methods for streamRouter.ts in Backend/src/controllers/streamController.ts
 
+- create endpoint for payments (create router for checkouts)
+- setup polar secrets and test product id in the backend env
+- create checkoutController for the checkoutRouter
+- create backend/src/lib/polar.ts helper for checkoutRouter
 
 
 
