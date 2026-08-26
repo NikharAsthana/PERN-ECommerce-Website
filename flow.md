@@ -74,7 +74,15 @@
 
 - create webhooks for polar
     create polar webhook handler in Backend/src/webhooks/polar.ts
-    ensure that index.ts has the route for the polar webhook handler 
+    ensure that index.ts has the route for the polar webhook handler
 
+- integrate sentry on the server side. will provide detailed error information to fix things later. sentry logs turn the app into a searchable and traceable system instead of a black box. The value is massive at scale when we'd need to debug issues across thousand of users. 
+
+- integrate sentry on the backend (use sentry docs)
+    - create instrument.ts
+    - edit dev and start scripts in package.json to use instrument.ts first. 
+    - edit index.ts to include sentry and add error handling middleware
+    - setup logic to attach user with the error. we wanna know which user had the error. Add clerkId to the error creating a custom middleware in backend/src/middleware/sentryClerkUser.ts (logic comes from docs)
+    - edit index.ts to use the middleware. Placing it right after clerk middleware (order is important, this middleware uses clerk)
 
 
