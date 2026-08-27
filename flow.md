@@ -85,4 +85,7 @@
     - setup logic to attach user with the error. we wanna know which user had the error. Add clerkId to the error creating a custom middleware in backend/src/middleware/sentryClerkUser.ts (logic comes from docs)
     - edit index.ts to use the middleware. Placing it right after clerk middleware (order is important, this middleware uses clerk)
 
+- setup admin routes in Backend/src/routes/adminRouter.ts   
+    setup logic for the functions used in adminRouter.ts in adminController.ts
+
 
