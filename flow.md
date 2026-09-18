@@ -97,3 +97,30 @@
         - setup creation of stream channel
 
 
+<!-- ======================================================= -->
+- start with the frontend
+
+- setup tailwindcss and daisyUI 
+    (pin tailwind at 4.2.2 if any huge issues/bug comes up)
+    - import theme from daisyui
+
+- setup tanstack query
+  - useQuery hook for get requests, useMutation hook for everything else.
+
+- setup sentry on the frontend (prefix with vite) 
+    [why???: security. It only bundles and exposes variables that begin with VITE_]
+
+- setup react-router    
+
+- wrap <App/> inside a sentry error boundary 
+- create the component for sentry errort boundary fallback
+
+- create sentryUserSync.jsx and connect main.jsx with it
+    - if something crashes on the frontend, we send the error to sentry. to know which user had the issue, we want to attach the clerk user id of the user. We want to attach this cuid to the error.
+
+- install lucide-react for icons
+- Create PageLoader.jsx for loading state.
+
+- create the layout component. many pages have a navbar, page content and a footer. Using layout for those.
+
+- scaffold the navbar and footer components.
