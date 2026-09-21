@@ -124,3 +124,12 @@
 - create the layout component. many pages have a navbar, page content and a footer. Using layout for those.
 
 - scaffold the navbar and footer components.
+
+
+- Create the navbar
+    create custom fetch method in Frontend/src/lib/api.js that allows authenticated requests.
+    without creating the custom function, we'd have to always attach the headers to the fetch requests . 
+        "headers.Authorization"  
+    - setup all the icons in navbar. 
+    - create a global state for cart item count using zustand   
+    - create a new (custom hook) useCart in Frontend/src/store/cart.js
