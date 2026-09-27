@@ -1,5 +1,12 @@
 import * as Sentry from "@sentry/react";
 
+// Centralizes all API requests so the frontend can send the Clerk auth token with protected requests.
+// Flow: frontend calls apiFetch → getToken() gets the logged-in user's Clerk token → token is sent as
+// `Authorization: Bearer <token>` → backend verifies the token with Clerk and identifies the user →
+// backend can safely authorize the request and return the correct data. This also keeps common API
+// behavior (base URL, JSON handling, errors, and Sentry logging) in one place instead of repeating it everywhere.
+
+
 const raw = import.meta.env.VITE_API_URL;
 
 //   safeguard for trailing slashes in the url just in case
