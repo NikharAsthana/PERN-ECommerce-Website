@@ -66,6 +66,9 @@ export async function getProductBySlug(
 
     if (!row || !row.active)
       return res.status(404).json({ error: "not found" });
+
+    res.json({ product: row });
+    
   } catch (e) {
     next(e); // sending error off to error handling middleware
   }
