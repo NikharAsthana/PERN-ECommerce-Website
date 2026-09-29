@@ -133,3 +133,20 @@
     - setup all the icons in navbar. 
     - create a global state for cart item count using zustand   
     - create a new (custom hook) useCart in Frontend/src/store/cart.js
+
+- create the footer
+
+- create the homepage with all the routes.
+    - create the homepage element in Frontend/src/pages/HomePage.jsx.  and the required custom hooks.
+    - define the useHomeCatalog hook in Frontend/src/hooks/useHomeCatalog.js
+    - define the HomeHero component in Frontend/src/components/HomeHero.jsx 
+    - create script for seeding data in the backend at Backend/scripts/seed.ts and add the script in package.json 
+    - define the trust strip component in Frontend/src/components/TrustStrip.jsx
+    - define the categories/catalog section in the HomePage.jsx
+    - define the PageError component in Frontend/src/components/PageError.jsx
+    - define the CatalogProductCard component in Frontend/src/components/CatalogProductCard.jsx
+       IMPORTABNT FYI:
+        -- use imageKit image optimization for different image sizes/qualities on diffferent pages. 
+        -- setup the optimization logic in Frontend/src/lib/imageKitUrl.js
+    - create format.js in Frontend/src/utils/format.js for formatting item price and createdAt date. 
+
