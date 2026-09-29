@@ -1,36 +1,20 @@
 // import { useState } from 'react'
-import {
-  Show,
-  SignInButton,
-  SignUpButton,
-  useAuth,
-  UserButton,
-} from "@clerk/react";
+import { useAuth } from "@clerk/react";
 import PageLoader from "./components/PageLoader";
 import Layout from "./components/Layout";
+import { Routes, Route } from "react-router";
+import HomePage from "./pages/HomePage";
 
 function App() {
-  // const [count, setCount] = useState(0)
   const { isLoaded } = useAuth();
   if (!isLoaded) return <PageLoader />;
 
   return (
-    
-      <Layout>
-        <header>
-          <Show when="signed-out">
-            <SignInButton mode="modal" />
-            <SignUpButton mode="modal" />
-          </Show>
-          <Show when="signed-in">
-            <UserButton />
-          </Show>
-        </header>
-        <button className="btn btn-primary font-extrabold">
-          click me bitch me
-        </button>
-      </Layout>
-    
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Layout>
   );
 }
 
