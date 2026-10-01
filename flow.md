@@ -150,3 +150,8 @@
         -- setup the optimization logic in Frontend/src/lib/imageKitUrl.js
     - create format.js in Frontend/src/utils/format.js for formatting item price and createdAt date. 
 
+- create the cart page at Frontend/src/pages/CartPage.jsx
+    - create useCartPage custom hook in Frontend/src/hooks/useCartPage.js
+    - add CartPage route in app.jsx
+    - create component for empty cart at Frontend/src/components/EmptyCart.jsx
+    - create a component for skeletons for loading in LoadingSkeletons.jsx 
