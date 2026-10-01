@@ -155,3 +155,8 @@
     - add CartPage route in app.jsx
     - create component for empty cart at Frontend/src/components/EmptyCart.jsx
     - create a component for skeletons for loading in LoadingSkeletons.jsx 
+
+- create the orders page at Frontend/src/pages/OrdersPage.jsx
+    - add orders page route in app.jsx
+    - create useOrdersPage hook
+    - create OrderPreview.jsx component.  
