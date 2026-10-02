@@ -165,4 +165,8 @@
     =======================================================================================
     - error to fix in the future. Ordering below the minimum amount (60 rs for polar), causes an internal server error instead of a 400 response. => ordering 1 59rs item is an internal server error but ordering 2 of them succeeds. 
     =======================================================================================
-      
+
+- create product detail page at Frontend/src/pages/ProductDetailPage.jsx
+    - add route for product page in app.jsx
+    - create the custom hook for detail page at Frontend/src/hooks/useProductPage.js
+    NOTE: watermark only visible on images hosted on imagekit. Seed data uses images hosted on unsplash thus, we get no watermark. images added from the admin dash would be stored on imagekit and they would have the watermark
