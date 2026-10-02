@@ -175,5 +175,9 @@
     - using nested route for this 
     - add routes in app.jsx
     - nested routes triggered when: /orders/1234randomorderid1234/chat
-    - create order chat page and order summary page 
+    - create order chat page (scaffold) and order summary page 
     - create custom hook useOrderDetailPage
+    - create useOrderChatPage custom hook for chat page
+    - (setup chat dependencies from npm) install stream-chat@9.41.0 on the frontend
+    - need stream-chat-react too
+    - finish chat page
