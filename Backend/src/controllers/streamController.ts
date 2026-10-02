@@ -42,7 +42,7 @@ export async function createStreamToken(
     await server.upsertUser({id: sid, name, image});
     // update or create user
     const token = server.createToken(sid)
-    res.json({token, apiKey: env.STREAM_API_KEY, userId: sid});
+    res.json({token, apiKey: env.STREAM_API_KEY, userId: sid, name});
     // return;
 
   } catch (e) {
