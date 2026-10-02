@@ -169,4 +169,11 @@
 - create product detail page at Frontend/src/pages/ProductDetailPage.jsx
     - add route for product page in app.jsx
     - create the custom hook for detail page at Frontend/src/hooks/useProductPage.js
-    NOTE: watermark only visible on images hosted on imagekit. Seed data uses images hosted on unsplash thus, we get no watermark. images added from the admin dash would be stored on imagekit and they would have the watermark
+    NOTE: watermark only visible on images hosted on imagekit. Seed data uses images hosted on unsplash thus, we get no watermark. images added from the admin dash would be stored on imagekit and they would have the watermark.
+
+- create the order detail page at Frontend/src/pages/OrderDetailPage.jsx
+    - using nested route for this 
+    - add routes in app.jsx
+    - nested routes triggered when: /orders/1234randomorderid1234/chat
+    - create order chat page and order summary page 
+    - create custom hook useOrderDetailPage
