@@ -181,3 +181,10 @@
     - (setup chat dependencies from npm) install stream-chat@9.41.0 on the frontend
     - need stream-chat-react too
     - finish chat page
+
+- build the video calling page
+    - create the needed route in app.jsx
+    - install the package for stream video client: 
+        --- npm i @stream-io/video-react-sdk (use 1.35.1 if things break)
+    - create the useOrderVideoPage custom hook  at Frontend/src/hooks/useOrderVideoPage.js
+    - create the OrderVideoPage at Frontend/src/pages/OrderVideoPage.jsx
