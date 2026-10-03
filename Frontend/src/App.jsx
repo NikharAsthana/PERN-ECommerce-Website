@@ -11,6 +11,7 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import OrderDetailPage from "./pages/OrderDetailPage";
 import OrderSummaryPage from "./pages/OrderSummaryPage";
 import OrderChatPage from "./pages/OrderChatPage";
+import OrderVideoPage from "./pages/OrderVideoPage";
 
 function App() {
   const { isLoaded, isSignedIn } = useAuth();
@@ -29,14 +30,15 @@ function App() {
         />
         <Route path="/checkout/return" element={<CheckoutReturnPage />} />
         
-        <Route path="/orders/:id" element={<OrderDetailPage/>} >
-          <Route index element= {<OrderSummaryPage/>} />
-          <Route path="chat" element={<OrderChatPage/>} /> 
-        </Route>
+        <Route path="/orders/:id/call" element={ isSignedIn ? <OrderVideoPage/> : <Navigate to={"/"} replace/>} />
 
+        <Route path="/orders/:id" element={<OrderDetailPage />}>
+          <Route index element={<OrderSummaryPage />} />
+          <Route path="chat" element={<OrderChatPage />} />
+        </Route>
       </Routes>
     </Layout>
   );
-}  
+}
 
 export default App;

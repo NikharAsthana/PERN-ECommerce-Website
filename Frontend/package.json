@@ -12,6 +12,7 @@
   "dependencies": {
     "@clerk/react": "^6.12.5",
     "@sentry/react": "^10.75.0",
+    "@stream-io/video-react-sdk": "^1.43.3",
     "@tailwindcss/vite": "^4.3.3",
     "@tanstack/react-query": "^5.103.1",
     "lucide-react": "^1.47.0",
