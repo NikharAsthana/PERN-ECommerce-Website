@@ -188,3 +188,10 @@
         --- npm i @stream-io/video-react-sdk (use 1.35.1 if things break)
     - create the useOrderVideoPage custom hook  at Frontend/src/hooks/useOrderVideoPage.js
     - create the OrderVideoPage at Frontend/src/pages/OrderVideoPage.jsx
+
+- build the admin page
+    - create image upload helper logic in Frontend/src/lib/imagekitUpload.js
+    - create the admin page route in App.jsx
+    - create the AdminProductForm component
+    - create useAdmminProductPage custom hook for the admin products page
+    - create the AdminProductsPage 
