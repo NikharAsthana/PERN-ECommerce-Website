@@ -195,3 +195,5 @@
     - create the AdminProductForm component
     - create useAdmminProductPage custom hook for the admin products page
     - create the AdminProductsPage 
+
+- update frontend env vars on render
