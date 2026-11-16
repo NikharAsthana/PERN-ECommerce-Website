@@ -90,7 +90,8 @@ Sentry.setupExpressErrorHandler(app);
 // adds sentry field to the response object. It is an id that references to the error that created it.
 // will give us a sentry id
 
-app.use((_err:unknown, _req:express.Request, res:express.Response, _next:express.NextFunction) => {
+app.use((err:unknown, _req:express.Request, res:express.Response, _next:express.NextFunction) => {
+  console.error(err);
   const sentryId = (res as express.Response & {sentry?: string}).sentry;
   res.status(500).json({
     error: "Internal server error",

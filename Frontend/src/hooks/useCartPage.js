@@ -35,24 +35,38 @@ export default function useCartPage() {
     return sum + p.priceCents * line.quantity;
   }, 0);
 
+  const [checkoutError, setCheckoutError] = useState("");
   async function checkout() {
     setCheckoutLoading(true);
+    setCheckoutError("");
 
     const body = {
-      items: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
+      items: items.map((i) => ({
+        productId: i.productId,
+        quantity: i.quantity,
+      })),
     };
 
-    const res = await apiFetch("/api/checkout", {
-      getToken,
-      method: "POST",
-      body,
-    });
+    try {
+      const res = await apiFetch("/api/checkout", {
+        getToken,
+        method: "POST",
+        body,
+      });
 
-    if (res?.checkoutUrl) {
-      window.location.href = res.checkoutUrl;
-      return;
+      if (res?.checkoutUrl) {
+        window.location.href = res.checkoutUrl;
+        return; // keep the loading state while browser redirects
+      }
+
+      setCheckoutLoading(false);
+    } catch (err) {
+      setCheckoutError(
+        err instanceof Error
+          ? err.message
+          : "Could not open checkout. Please try again.",
+      );
     }
-
     setCheckoutLoading(false);
   }
 
@@ -66,5 +80,6 @@ export default function useCartPage() {
     subtotal,
     checkout,
     checkoutLoading,
+    checkoutError,
   };
 }

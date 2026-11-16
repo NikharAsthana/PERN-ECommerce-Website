@@ -75,10 +75,19 @@ export async function createCheckout(
     }
     // unnecessary precaution but trying to cover everything.
     // no product will be priced so low so we'll never hit this anyway
-    if (totalCents < 60) {
-      // 10 for usd, while setting up for inr polar rquired 60inr minimum
+    // if (totalCents < 60) {
+    //   // 10 for usd, while setting up for inr polar rquired 60inr minimum
+    //   res.status(400).json({
+    //     error: "Total amount does not exceed polar minimum",
+    //   });
+    //   return;
+    // }
+    // Polar rejects INR orders below ₹60. Amounts are stored in paise.
+    const MIN_TOTAL_PAISE = 6000;
+
+    if (totalCents < MIN_TOTAL_PAISE) {
       res.status(400).json({
-        error: "Total amount does not exceed polar minimum",
+        error: `Minimum order amount is ₹${MIN_TOTAL_PAISE / 100}. Add more items or increase the quantity.`,
       });
       return;
     }
