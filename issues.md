@@ -2,4 +2,4 @@
 
 - orders on the orders page show the amount in usd even though the payments were made in inr. 
 
-- change the default tab icon for the website 
+- add screenshots to the readme 
