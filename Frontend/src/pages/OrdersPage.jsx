@@ -99,7 +99,7 @@ function OrdersPage() {
                           Total
                         </p>
                         <p className="text-lg font-bold tabular-nums text-base-content sm:text-xl">
-                          {formatPrice(o.totalCents, "usd")}
+                          {formatPrice(o.totalCents, "inr")}
                         </p>
                       </div>
                       <ChevronRightIcon
